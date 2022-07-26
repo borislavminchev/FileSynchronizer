@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
+#include <unordered_map>
 #include "tclap/CmdLine.h"
 #include "DirectoryAnalyzer.h"
 #include "CmdFileInterpreter.hpp"
@@ -138,6 +139,25 @@ private:
 		}
 	}
 
+	std::string buildCommand(std::unordered_map<std::string, std::string>& map) const {
+		std::string cmd;
+		cmd += "-l " + map["left_folder"];
+		cmd += " -r " + map["right_folder"];
+		cmd += " -f " + map["output_file"];
+
+		std::string analyzeMethod = map["analyze_method"];
+		std::string compareMethod = map["compare_method"];
+
+		if (analyzeMethod == "mirror") cmd += " -m ";
+		else if(analyzeMethod == "safe") cmd += " -s ";
+		else if(analyzeMethod == "standart") cmd += " -d ";
+
+		if (compareMethod == "safe") cmd += " -S ";
+		else if (compareMethod == "quick") cmd += " -Q ";
+
+		return cmd;
+	}
+
 	/// <summary>
 	/// reads setup configuration from file
 	/// </summary>
@@ -146,12 +166,33 @@ private:
 	{
 		try
 		{
-			std::ifstream stream(configFile);
+			/*std::ifstream stream(configFile);
 			std::string s;
 			std::cin >> s;
 			std::getline(stream, s);
 			stream.close();
 
+			parseArgs(splitArgs(s));*/
+			std::unordered_map<std::string, std::string> args;
+			args.insert({ "left_folder", "" });
+			args.insert({ "right_folder", "" });
+			args.insert({ "output_file", "" });
+			args.insert({ "analyze_method", "" });
+			args.insert({ "conmpare_method", "" });
+
+			std::ifstream stream(configFile);
+			std::string line;
+			while (std::getline(stream, line)) {
+				std::istringstream lineStream(line);
+				std::string arg = "";
+				if (std::getline(lineStream, arg, '=')) {
+					std::string val = "";
+					std::getline(lineStream, val);
+					args[arg] = val;
+				}
+			}
+			stream.close();
+			std::string s = buildCommand(args);
 			parseArgs(splitArgs(s));
 		}
 		catch (const std::exception& e)
@@ -176,13 +217,9 @@ public:
 		else if (i == 1)
 		{
 			std::cout << "Please give config file path:\n";
-			std::string p;
 			std::string s;
 			std::cin >> s;
-			std::getline(std::cin, p);
-			p = s + " " + p;
-			std::getline(std::cin, p);
-			readInput(p);
+			readInput(s);
 		}
 		else
 		{

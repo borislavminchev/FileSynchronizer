@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	}
 	
 	//example command
-	//-l "path-to-folder1" -r "path-to-folder2" -f file.txt -d -Q
+	//-l "C:\Users\Bobby\Desktop\test" -r "C:\Users\Bobby\Desktop\example" -f file.txt -d -Q
 	
 }
 
