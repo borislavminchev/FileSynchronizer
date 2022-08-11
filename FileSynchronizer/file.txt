@@ -1,0 +1,8 @@
+LEFT is "C:\Users\Bobby\Desktop\test"
+RIGHT is "C:\Users\Bobby\Desktop\example"
+CREATE-DIR "R\abc"
+COPY "L\abc\f.txt" "R\abc\f.txt"
+COPY "L\abc\file2.txt" "R\abc\file2.txt"
+CREATE-DIR "R\abc\folder"
+COPY "L\abc\folder\file3.txt" "R\abc\folder\file3.txt"
+COPY "L\file.txt" "R\file.txt"

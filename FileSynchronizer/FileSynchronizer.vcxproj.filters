@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="analyzer">
+      <UniqueIdentifier>{95d85b47-1989-43be-beb5-5990e3895514}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="comparator">
+      <UniqueIdentifier>{252ffcff-6b49-4b0d-b587-d6b684d9e5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generator">
+      <UniqueIdentifier>{716219a3-c67d-4b63-a90b-b8008517017e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fiilemanager">
+      <UniqueIdentifier>{1f037ea6-55d3-416e-b6b8-9885b785bed1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryAnalyzer.cpp">
+      <Filter>analyzer</Filter>
+    </ClCompile>
+    <ClCompile Include="MirrorDirectoryAnalyzer.cpp">
+      <Filter>analyzer</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeDirectoryAnalyzer.cpp">
+      <Filter>analyzer</Filter>
+    </ClCompile>
+    <ClCompile Include="StandartDirectoryAnalyzer.cpp">
+      <Filter>analyzer</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickFileComparator.cpp">
+      <Filter>comparator</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeFileComparator.cpp">
+      <Filter>comparator</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandGenerator.cpp">
+      <Filter>generator</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>fiilemanager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileComparator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryAnalyzer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdFileInterpreter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputReader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="file.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.properties">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
